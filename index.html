@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ডা. মো. মেহেদি হাসান সজল</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f8f8;--card:#fff;--ink:#12303a;--muted:#5b747c;--teal:#0f766e;--mint:#dff0ee;--line:#d3e3e2;--wa:#1da851}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Hind Siliguri",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+header{background:var(--ink);color:#fff;padding:36px 20px 30px}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+header .wrap{padding:0}
+h1{margin:0;font-size:2rem;font-weight:700}
+.sub{margin:4px 0 0;color:#b9d3d6}
+main{padding:20px 0 48px}
+h2{font-size:1.25rem;margin:28px 0 12px}
+.today{background:var(--teal);color:#fff;border-radius:14px;padding:16px 18px;margin-top:-22px;box-shadow:0 6px 18px rgba(15,118,110,.25)}
+.today b{font-size:1.1rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.card h3{margin:0 0 2px;font-size:1.05rem}
+.days{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.days span{background:var(--mint);color:var(--teal);border-radius:6px;padding:1px 10px;font-size:.92rem;font-weight:500}
+.days span.on{background:var(--teal);color:#fff}
+.meta{color:var(--muted);margin:0;font-size:.95rem}
+.meta a{color:var(--teal)}
+form{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+label{display:block;font-weight:500;margin:12px 0 4px}
+label:first-child{margin-top:0}
+input,select{width:100%;font:inherit;padding:10px 12px;border:1px solid #b7cccb;border-radius:8px;background:#fff;color:var(--ink)}
+input:focus,select:focus,button:focus-visible{outline:3px solid #7cc7bf;outline-offset:1px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+button{margin-top:18px;width:100%;font:inherit;font-weight:700;font-size:1.05rem;padding:13px;border:0;border-radius:10px;background:var(--wa);color:#fff;cursor:pointer}
+.notice{background:#fff4d6;border:1px solid #e7c35a;border-radius:12px;padding:12px 16px;margin-top:14px;white-space:pre-line}
+.notice[hidden]{display:none}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.btn{flex:1 1 140px;margin:0;width:auto;display:block;text-align:center;text-decoration:none;font:inherit;font-weight:500;font-size:1rem;padding:11px 12px;border:1px solid var(--teal);border-radius:10px;background:#fff;color:var(--teal);cursor:pointer}
+.btn.call{background:var(--teal);color:#fff}
+.fee{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}
+.fee:last-child{border-bottom:0}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin-bottom:8px}
+summary{font-weight:500;cursor:pointer}
+details p{margin:8px 0 2px;color:var(--muted)}
+#qr{display:flex;justify-content:center;padding:12px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.note{color:var(--muted);font-size:.9rem;margin:10px 0 0}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding-bottom:30px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1 id="dname"></h1>
+  <p class="sub" id="dinfo"></p>
+</div></header>
+
+<main class="wrap">
+  <div class="today" id="today"></div>
+  <div class="notice" id="notice" hidden></div>
+  <div class="actions">
+    <a class="btn call" id="callbtn" href="#">📞 কল করুন</a>
+    <button type="button" class="btn" id="sharebtn">🔗 শেয়ার করুন</button>
+  </div>
+
+  <h2>কবে কোথায় বসেন</h2>
+  <div id="chambers"></div>
+
+  <div id="feesec" hidden>
+    <h2>ফি</h2>
+    <div class="card" id="fees"></div>
+  </div>
+
+  <h2>হোয়াটসঅ্যাপে সিরিয়াল নিন</h2>
+  <form id="f">
+    <label for="name">রোগীর নাম</label>
+    <input id="name" required autocomplete="name">
+    <div class="row">
+      <div><label for="age">বয়স</label><input id="age" type="number" min="0" max="120" required></div>
+      <div><label for="phone">ফোন নম্বর</label><input id="phone" type="tel" inputmode="numeric" required></div>
+    </div>
+    <label for="ch">চেম্বার</label>
+    <select id="ch"></select>
+    <label for="dt">তারিখ</label>
+    <select id="dt"></select>
+    <label for="prob">সমস্যা (সংক্ষেপে, ঐচ্ছিক)</label>
+    <input id="prob">
+    <button type="submit">হোয়াটসঅ্যাপে সিরিয়াল পাঠান</button>
+    <p class="note">বাটনে চাপলে হোয়াটসঅ্যাপ খুলবে এবং তথ্য লেখা মেসেজ তৈরি থাকবে। শুধু "Send" চাপুন। সিরিয়াল নম্বর নিশ্চিত করে ডাক্তারের অফিস উত্তর দেবে।</p>
+  </form>
+
+  <h2>সাধারণ প্রশ্ন</h2>
+  <div id="faq"></div>
+
+  <h2>QR কোড</h2>
+  <div id="qr"></div>
+  <p class="note">ফোনে স্ক্যান করলেই এই সাইট খুলবে। স্ক্রিনশট নিয়ে প্রেসক্রিপশনে বা চেম্বারের দেয়ালে ছাপতে পারেন।</p>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<footer>জরুরি অবস্থায় নিকটস্থ হাসপাতালে যান।</footer>
+
+<script>
+/* ====== শুধু এই অংশটুকু নিজের তথ্য দিয়ে বদলান ====== */
+const DOCTOR = {
+  name: "ডা. মো. মেহেদি হাসান সজল",
+  info: "এমবিবিএস, বিসিএস (স্বাস্থ্য), পিজিটি (মেডিসিন), সিএমইউ (আল্ট্রা) • মেডিকেল অফিসার, উপজেলা স্বাস্থ্য কমপ্লেক্স, ধুনট, বগুড়া • মেডিসিন, শিশু, ডায়াবেটিস, চর্ম ও যৌন রোগে অভিজ্ঞ",
+  whatsapp: "8801868613036"
+};
+// days: 0=রবি, 1=সোম, 2=মঙ্গল, 3=বুধ, 4=বৃহস্পতি, 5=শুক্র, 6=শনি
+const CHAMBERS = [
+  { name: "সেবা এবং রাহা ডায়াগনস্টিক সেন্টার", place: "গোসাইবাড়ী, ধুনট, বগুড়া", days: [5], time: "সারাদিন", map: "https://share.google/eq9uCJMfaGqDIb540" }
+];
+// নোটিশ দিতে নিচের "" এর ভেতরে লিখুন। নোটিশ বন্ধ করতে আবার ফাঁকা "" করে দিন।
+const NOTICE = "";
+
+// কল বাটনের নম্বর (শুরুতে ০ সহ)
+const PHONE = "01868613036";
+// সাইটের ঠিকানা (QR কোড ও শেয়ারের জন্য)
+const SITE = "https://drmehidisajol-93.github.io";
+// ফি দিতে লাইন যোগ করুন। ফাঁকা [] থাকলে ফি অংশ দেখাবে না। যেমন:
+// { label: "নতুন রোগী", amount: "৫০০ টাকা" },
+const FEES = [
+  { label: "নতুন রোগী", amount: "২০০ টাকা" },
+  { label: "পুরাতন রোগী", amount: "১৫০ টাকা" }
+];
+// সাধারণ প্রশ্নোত্তর (দরকার মতো বদলান বা মুছুন)
+const FAQ = [
+  { q: "সিরিয়াল কীভাবে নেবেন?", a: "উপরের ফর্ম পূরণ করে হোয়াটসঅ্যাপে পাঠান। সিরিয়াল নম্বর নিশ্চিত করে উত্তর দেওয়া হবে।" },
+  { q: "কী কী সঙ্গে আনবেন?", a: "আগের প্রেসক্রিপশন, রিপোর্ট ও চলমান ওষুধগুলো সঙ্গে আনুন।" },
+  { q: "জরুরি অবস্থায় কী করবেন?", a: "চেম্বারের জন্য অপেক্ষা না করে সরাসরি নিকটস্থ হাসপাতালের জরুরি বিভাগে যান।" }
+];
+/* ================================================== */
+
+const DAYS = ["রবি","সোম","মঙ্গল","বুধ","বৃহস্পতি","শুক্র","শনি"];
+const $ = id => document.getElementById(id);
+const bn = n => String(n).replace(/\d/g, d => "০১২৩৪৫৬৭৮৯"[d]);
+
+$("dname").textContent = DOCTOR.name;
+$("dinfo").textContent = DOCTOR.info;
+document.title = DOCTOR.name + " এর চেম্বার";
+
+if (NOTICE.trim()) { $("notice").textContent = "📢 " + NOTICE.trim(); $("notice").hidden = false; }
+
+$("callbtn").href = "tel:" + PHONE;
+$("sharebtn").addEventListener("click", () => {
+  const data = { title: DOCTOR.name, text: DOCTOR.name + " এর চেম্বার ও সিরিয়ালের তথ্য", url: SITE };
+  if (navigator.share) navigator.share(data).catch(() => {});
+  else window.open("https://wa.me/?text=" + encodeURIComponent(data.text + "\n" + SITE), "_blank");
+});
+if (FEES.length) {
+  $("fees").innerHTML = FEES.map(f => `<div class="fee"><span>${f.label}</span><b>${f.amount}</b></div>`).join("");
+  $("feesec").hidden = false;
+}
+$("faq").innerHTML = FAQ.map(x => `<details><summary>${x.q}</summary><p>${x.a}</p></details>`).join("");
+try { new QRCode($("qr"), { text: SITE, width: 200, height: 200 }); } catch (e) { $("qr").textContent = SITE; }
+
+const todayIdx = new Date().getDay();
+const openToday = CHAMBERS.filter(c => c.days.includes(todayIdx));
+$("today").innerHTML = openToday.length
+  ? "<b>আজ (" + DAYS[todayIdx] + "বার) বসছেন</b><br>" + openToday.map(c => c.name + ", " + c.time).join("<br>")
+  : "<b>আজ চেম্বার বন্ধ</b><br>নিচে পরবর্তী দিনগুলো দেখুন।";
+
+$("chambers").innerHTML = CHAMBERS.map(c => `
+  <div class="card">
+    <h3>${c.name}</h3>
+    <div class="days">${DAYS.map((d,i) => c.days.includes(i) ? `<span class="${i===todayIdx?'on':''}">${d}</span>` : "").join("")}</div>
+    <p class="meta">${c.time}</p>
+    <p class="meta">${c.place}${c.map ? ` • <a href="${c.map}" target="_blank" rel="noopener">ম্যাপ দেখুন</a>` : ""}</p>
+  </div>`).join("");
+
+$("ch").innerHTML = CHAMBERS.map((c,i) => `<option value="${i}">${c.name}</option>`).join("");
+
+function fillDates(){
+  const c = CHAMBERS[$("ch").value], out = [];
+  const d = new Date();
+  for (let i = 0; i < 21 && out.length < 6; i++){
+    if (c.days.includes(d.getDay()))
+      out.push(`<option value="${d.getDay()}|${d.getDate()}|${d.getMonth()+1}">${DAYS[d.getDay()]}বার, ${bn(d.getDate())}/${bn(d.getMonth()+1)}${i===0?" (আজ)":""}</option>`);
+    d.setDate(d.getDate() + 1);
+  }
+  $("dt").innerHTML = out.join("");
+}
+$("ch").addEventListener("change", fillDates);
+fillDates();
+
+$("f").addEventListener("submit", e => {
+  e.preventDefault();
+  const c = CHAMBERS[$("ch").value];
+  const dateText = $("dt").selectedOptions[0].textContent;
+  let msg = `সিরিয়ালের জন্য অনুরোধ\n\nরোগীর নাম: ${$("name").value.trim()}\nবয়স: ${$("age").value}\nফোন: ${$("phone").value.trim()}\nচেম্বার: ${c.name}\nতারিখ: ${dateText}`;
+  if ($("prob").value.trim()) msg += `\nসমস্যা: ${$("prob").value.trim()}`;
+  window.open("https://wa.me/" + DOCTOR.whatsapp + "?text=" + encodeURIComponent(msg), "_blank");
+});
+</script>
+</body>
+</html>
