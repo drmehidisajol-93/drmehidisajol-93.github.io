@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ডা. মো. মেহেদি হাসান সজল</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f8f8;--card:#fff;--ink:#12303a;--muted:#5b747c;--teal:#0f766e;--mint:#dff0ee;--line:#d3e3e2;--wa:#1da851}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Hind Siliguri",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+header{background:var(--ink);color:#fff;padding:36px 20px 30px}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+header .wrap{padding:0}
+h1{margin:0;font-size:1.55rem;font-weight:700;line-height:1.3}
+.sub{margin:4px 0 0;color:#b9d3d6;font-size:.88rem;line-height:1.5}
+.hd{display:flex;align-items:center;gap:16px}
+.hd img{width:92px;height:92px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.35);flex:none}
+[hidden]{display:none!important}
+button:disabled{opacity:.5;cursor:not-allowed}
+details ul{margin:8px 0 2px;padding-left:20px;color:var(--muted)}
+details li{margin-bottom:4px}
+.bd{color:var(--teal);font-weight:700}
+main{padding:20px 0 48px}
+h2{font-size:1.25rem;margin:28px 0 12px}
+.today{background:var(--teal);color:#fff;border-radius:14px;padding:16px 18px;margin-top:-22px;box-shadow:0 6px 18px rgba(15,118,110,.25)}
+.today b{font-size:1.1rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.card h3{margin:0 0 2px;font-size:1.05rem}
+.days{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.days span{background:var(--mint);color:var(--teal);border-radius:6px;padding:1px 10px;font-size:.92rem;font-weight:500}
+.days span.on{background:var(--teal);color:#fff}
+.meta{color:var(--muted);margin:0;font-size:.95rem}
+.meta a{color:var(--teal)}
+form{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+label{display:block;font-weight:500;margin:12px 0 4px}
+label:first-child{margin-top:0}
+input,select{width:100%;font:inherit;padding:10px 12px;border:1px solid #b7cccb;border-radius:8px;background:#fff;color:var(--ink)}
+input:focus,select:focus,button:focus-visible{outline:3px solid #7cc7bf;outline-offset:1px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+button{margin-top:18px;width:100%;font:inherit;font-weight:700;font-size:1.05rem;padding:13px;border:0;border-radius:10px;background:var(--wa);color:#fff;cursor:pointer}
+.notice{background:#fff4d6;border:1px solid #e7c35a;border-radius:12px;padding:12px 16px;margin-top:14px;white-space:pre-line}
+.notice[hidden]{display:none}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.btn{flex:1 1 140px;margin:0;width:auto;display:block;text-align:center;text-decoration:none;font:inherit;font-weight:500;font-size:1rem;padding:11px 12px;border:1px solid var(--teal);border-radius:10px;background:#fff;color:var(--teal);cursor:pointer}
+.btn.call{background:var(--teal);color:#fff}
+.fee{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}
+.fee:last-child{border-bottom:0}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin-bottom:8px}
+summary{font-weight:500;cursor:pointer}
+details p{margin:8px 0 2px;color:var(--muted)}
+#qr{display:flex;justify-content:center;padding:12px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.bmiout{margin-top:12px;font-weight:500}
+.note{color:var(--muted);font-size:.9rem;margin:10px 0 0}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding-bottom:30px}
+</style>
+</head>
+<body>
+<header><div class="wrap hd">
+  <img id="dphoto" alt="ডাক্তারের ছবি" width="92" height="92" src="data:image/jpeg;base64,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">
+  <div>
+    <h1 id="dname"></h1>
+    <p class="sub" id="dinfo"></p>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <div class="today" id="today"></div>
+  <div class="notice" id="notice" hidden></div>
+  <div class="actions">
+    <a class="btn call" id="callbtn" href="#">📞 কল করুন</a>
+    <button type="button" class="btn" id="sharebtn">🔗 শেয়ার করুন</button>
+    <a class="btn" id="fbbtn" href="#" target="_blank" rel="noopener" hidden>ফেসবুক পেজ</a>
+    <a class="btn" id="msgbtn" href="#" target="_blank" rel="noopener" hidden>মেসেঞ্জার</a>
+    <button type="button" class="btn" id="fontbtn">🔠 লেখা বড়/ছোট</button>
+  </div>
+
+  <div id="boardsec" hidden>
+    <h2>নোটিশ বোর্ড</h2>
+    <div id="board"></div>
+  </div>
+
+  <h2>কবে কোথায় বসেন</h2>
+  <div id="chambers"></div>
+
+  <div id="dirsec" hidden>
+    <h2>কীভাবে যাবেন</h2>
+    <div class="card" id="dirs"></div>
+  </div>
+
+  <div id="feesec" hidden>
+    <h2>ফি</h2>
+    <div class="card" id="fees"></div>
+  </div>
+
+  <div id="paysec" hidden>
+    <h2>ফি পরিশোধ</h2>
+    <div class="card" id="pay"></div>
+  </div>
+
+  <h2>অনলাইনে দেখাতে চান?</h2>
+  <div class="card">
+    <p class="meta" id="onl"></p>
+    <button type="button" class="btn call" id="onlbtn" style="width:100%;margin-top:12px">📹 হোয়াটসঅ্যাপে ভিডিও কলের অনুরোধ</button>
+  </div>
+
+  <h2>হোয়াটসঅ্যাপে সিরিয়াল নিন</h2>
+  <p class="notice" id="pause" hidden></p>
+  <form id="f">
+    <label for="name">রোগীর নাম</label>
+    <input id="name" required autocomplete="name">
+    <div class="row">
+      <div><label for="age">বয়স</label><input id="age" type="number" min="0" max="120" required></div>
+      <div><label for="phone">ফোন নম্বর</label><input id="phone" type="tel" inputmode="numeric" required></div>
+    </div>
+    <label for="ch">চেম্বার</label>
+    <select id="ch"></select>
+    <label for="dt">তারিখ</label>
+    <select id="dt"></select>
+    <label for="prob">সমস্যা (সংক্ষেপে, ঐচ্ছিক)</label>
+    <input id="prob">
+    <button type="submit">হোয়াটসঅ্যাপে সিরিয়াল পাঠান</button>
+    <button type="button" class="btn" id="smsbtn" style="width:100%;margin-top:10px">💬 এসএমএসে সিরিয়াল পাঠান</button>
+    <div class="actions">
+      <button type="button" class="btn" id="gcal">📅 Google ক্যালেন্ডারে যোগ করুন</button>
+      <button type="button" class="btn" id="ics">📅 iPhone/অন্য ক্যালেন্ডার</button>
+    </div>
+    <p class="note">বাটনে চাপলে হোয়াটসঅ্যাপ খুলবে এবং তথ্য লেখা মেসেজ তৈরি থাকবে। শুধু "Send" চাপুন। সিরিয়াল নম্বর নিশ্চিত করে ডাক্তারের অফিস উত্তর দেবে। সিরিয়াল নিশ্চিত হওয়ার পর তারিখটি ক্যালেন্ডারে যোগ করে রাখুন।</p>
+  </form>
+
+  <h2>BMI মাপুন</h2>
+  <div class="card">
+    <label for="bw">ওজন (কেজি)</label>
+    <input id="bw" type="number" min="1" step="0.1" inputmode="decimal">
+    <div class="row">
+      <div><label for="bf">উচ্চতা (ফুট)</label><input id="bf" type="number" min="1" max="8" inputmode="numeric"></div>
+      <div><label for="bi">ইঞ্চি</label><input id="bi" type="number" min="0" max="11" step="0.5" inputmode="decimal"></div>
+    </div>
+    <button type="button" class="btn call" id="bmibtn" style="width:100%;margin-top:14px">BMI দেখুন</button>
+    <div class="bmiout" id="bmiout" aria-live="polite"></div>
+  </div>
+
+  <h2>স্বাস্থ্য পরামর্শ</h2>
+  <div id="health"></div>
+  <p class="note">এগুলো সাধারণ সচেতনতার তথ্য, চিকিৎসার বিকল্প নয়। নিজের অবস্থার জন্য ডাক্তারের পরামর্শ নিন।</p>
+
+  <h2>সাধারণ প্রশ্ন</h2>
+  <div id="faq"></div>
+
+  <h2>QR কোড</h2>
+  <div id="qr"></div>
+  <p class="note">ফোনে স্ক্যান করলেই এই সাইট খুলবে। স্ক্রিনশট নিয়ে প্রেসক্রিপশনে বা চেম্বারের দেয়ালে ছাপতে পারেন।</p>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<footer>জরুরি অবস্থায় নিকটস্থ হাসপাতালে যান।</footer>
+
+<script>
+/* ====== শুধু এই অংশটুকু নিজের তথ্য দিয়ে বদলান ====== */
+const DOCTOR = {
+  name: "ডা. মো. মেহেদি হাসান সজল",
+  info: "এমবিবিএস, বিসিএস (স্বাস্থ্য), পিজিটি (মেডিসিন), সিএমইউ (আল্ট্রা) • মেডিকেল অফিসার, উপজেলা স্বাস্থ্য কমপ্লেক্স, ধুনট, বগুড়া • মেডিসিন, শিশু, ডায়াবেটিস, চর্ম ও যৌন রোগে অভিজ্ঞ",
+  whatsapp: "8801737204512"
+};
+// days: 0=রবি, 1=সোম, 2=মঙ্গল, 3=বুধ, 4=বৃহস্পতি, 5=শুক্র, 6=শনি
+const CHAMBERS = [
+  { name: "সেবা এবং রাহা ডায়াগনস্টিক সেন্টার", place: "গোসাইবাড়ী, ধুনট, বগুড়া", days: [5], time: "সারাদিন", map: "https://share.google/eq9uCJMfaGqDIb540" }
+];
+// নোটিশ দিতে নিচের "" এর ভেতরে লিখুন। নোটিশ বন্ধ করতে আবার ফাঁকা "" করে দিন।
+const NOTICE = "";
+
+// কল বাটনের নম্বর (শুরুতে ০ সহ)
+const PHONE = "01868613036";
+// সাইটের ঠিকানা (QR কোড ও শেয়ারের জন্য)
+const SITE = "https://drmehidisajol-93.github.io";
+// ফি দিতে লাইন যোগ করুন। ফাঁকা [] থাকলে ফি অংশ দেখাবে না। যেমন:
+// { label: "নতুন রোগী", amount: "৫০০ টাকা" },
+const FEES = [
+  { label: "নতুন রোগী", amount: "২০০ টাকা" },
+  { label: "পুরাতন রোগী", amount: "১৫০ টাকা" },
+  { label: "অনলাইনে (ভিডিও কলে)", amount: "১০০ টাকা" }
+];
+// সাধারণ প্রশ্নোত্তর (দরকার মতো বদলান বা মুছুন)
+const FAQ = [
+  { q: "সিরিয়াল কীভাবে নেবেন?", a: "উপরের ফর্ম পূরণ করে হোয়াটসঅ্যাপে পাঠান। সিরিয়াল নম্বর নিশ্চিত করে উত্তর দেওয়া হবে।" },
+  { q: "কী কী সঙ্গে আনবেন?", a: "আগের প্রেসক্রিপশন, রিপোর্ট ও চলমান ওষুধগুলো সঙ্গে আনুন।" },
+  { q: "জরুরি অবস্থায় কী করবেন?", a: "চেম্বারের জন্য অপেক্ষা না করে সরাসরি নিকটস্থ হাসপাতালের জরুরি বিভাগে যান।" }
+];
+
+// নোটিশ বোর্ড: একাধিক নোটিশ। তারিখ ফাঁকা রাখা যায়। ফাঁকা [] হলে অংশটি দেখাবে না।
+const NOTICES = [
+  { date: "", text: "প্রতি শুক্রবার সারাদিন চেম্বার খোলা। সিরিয়ালের জন্য আগে হোয়াটসঅ্যাপে মেসেজ দিন।" }
+];
+// ছুটির তারিখ (বছর-মাস-দিন)। ওই দিন ফর্মের তারিখ তালিকা থেকে বাদ যাবে। যেমন: ["2026-12-25", "2027-01-01"]
+const HOLIDAYS = [];
+// সিরিয়াল সাময়িক বন্ধ রাখতে "" এর ভেতরে কারণ লিখুন, যেমন "আজকের সিরিয়াল পূর্ণ।" খুলতে আবার "" করুন।
+const SERIAL_PAUSE = "";
+// এসএমএসের নম্বর (দেশের কোডসহ)। হোয়াটসঅ্যাপের নম্বরের মতো হলে এভাবেই রাখুন।
+const SMS_NUMBER = DOCTOR.whatsapp;
+// ফাঁকা "" থাকলে সংশ্লিষ্ট বাটন বা অংশ দেখাবে না
+const FACEBOOK = "";    // ফেসবুক পেজের লিংক
+const MESSENGER = "";   // যেমন https://m.me/পেজের-নাম
+const DIRECTIONS = "";  // যেমন "ধুনট বাস স্ট্যান্ড থেকে রিকশায় ১০ মিনিট। গোসাইবাড়ী বাজারের পাশে।"
+// স্বাস্থ্য পরামর্শ (সাধারণ সচেতনতামূলক)
+const HEALTH = [
+  { t: "ডায়াবেটিস", items: [
+    "ওষুধ বা ইনসুলিন ডাক্তারের নির্দেশমতো নিন। নিজে বন্ধ করবেন না বা ডোজ বদলাবেন না।",
+    "ভাত, রুটি, মিষ্টি ও চিনি পরিমিত খান। শাকসবজি ও ডাল বেশি রাখুন, ভাজাপোড়া কম।",
+    "প্রতিদিন অন্তত ৩০ মিনিট হাঁটুন (ডাক্তার নিষেধ না করলে)।",
+    "নিয়মিত রক্তের সুগার মাপুন। পায়ের যত্ন নিন, ছোট ক্ষতও অবহেলা করবেন না।",
+    "বছরে অন্তত একবার চোখ ও কিডনির পরীক্ষা করান।",
+    "অতিরিক্ত ঘাম, কাঁপুনি, মাথা ঘোরা বা অজ্ঞান ভাব হলে দ্রুত চিকিৎসা নিন।"
+  ]},
+  { t: "উচ্চ রক্তচাপ (প্রেসার)", items: [
+    "লবণ কম খান। পাতে বাড়তি লবণ, আচার, শুঁটকি ও প্যাকেটজাত খাবার কমান।",
+    "ভালো লাগছে বলে ওষুধ বন্ধ করবেন না। নিয়মিত খান।",
+    "ওজন নিয়ন্ত্রণে রাখুন, নিয়মিত হাঁটুন, ধূমপান ও তামাক-জর্দা ছাড়ুন।",
+    "বাসায় নিয়মিত প্রেসার মাপুন, তারিখসহ লিখে চেম্বারে আনুন।",
+    "হঠাৎ তীব্র মাথাব্যথা, বুকে ব্যথা, শ্বাসকষ্ট, কথা জড়িয়ে যাওয়া বা হাত-পা দুর্বল হলে সঙ্গে সঙ্গে হাসপাতালে যান।"
+  ]},
+  { t: "কোমর ব্যথা", items: [
+    "দীর্ঘক্ষণ একভাবে বসে বা দাঁড়িয়ে থাকবেন না। বসার সময় পিঠ সোজা রাখুন।",
+    "ভারী জিনিস তুলতে হাঁটু ভেঙে তুলুন, কোমর বাঁকিয়ে নয়।",
+    "সারাদিন শুয়ে না থেকে হালকা চলাফেরা চালু রাখুন।",
+    "নিজে নিজে ব্যথার ওষুধ বেশিদিন খাবেন না।",
+    "পায়ে অবশ ভাব বা দুর্বলতা, প্রস্রাব-পায়খানায় নিয়ন্ত্রণ হারানো, জ্বর বা আঘাতের পর ব্যথা হলে দেরি না করে ডাক্তার দেখান।"
+  ]}
+];
+
+// ফি পরিশোধের নম্বর। ফাঁকা [] হলে "ফি পরিশোধ" অংশ দেখাবে না। নিচের লাইনের // তুলে নম্বর বসান:
+const PAYMENT = [
+  { name: "বিকাশ", number: "01737204512", type: "পার্সোনাল, Send Money" }
+];
+const PAY_NOTE = "চেম্বারে সরাসরি নগদেও ফি দেওয়া যায়।";
+// অনলাইনে (ভিডিও কলে) দেখানোর তথ্য
+const ONLINE_INFO = "চেম্বারে আসতে না পারলে হোয়াটসঅ্যাপ ভিডিও কলে দেখানো যায়। নিচের বাটনে চেপে আগে মেসেজ দিন, সময় ঠিক করে জানানো হবে। অনলাইনে ভিজিট ১০০ টাকা।";
+/* ================================================== */
+
+const DAYS = ["রবি","সোম","মঙ্গল","বুধ","বৃহস্পতি","শুক্র","শনি"];
+const $ = id => document.getElementById(id);
+const bn = n => String(n).replace(/\d/g, d => "০১২৩৪৫৬৭৮৯"[d]);
+
+$("dname").textContent = DOCTOR.name;
+$("dinfo").textContent = DOCTOR.info;
+document.title = DOCTOR.name + " এর চেম্বার";
+
+if (NOTICE.trim()) { $("notice").textContent = "📢 " + NOTICE.trim(); $("notice").hidden = false; }
+
+$("callbtn").href = "tel:" + PHONE;
+$("sharebtn").addEventListener("click", () => {
+  const data = { title: DOCTOR.name, text: DOCTOR.name + " এর চেম্বার ও সিরিয়ালের তথ্য", url: SITE };
+  if (navigator.share) navigator.share(data).catch(() => {});
+  else window.open("https://wa.me/?text=" + encodeURIComponent(data.text + "\n" + SITE), "_blank");
+});
+if (FEES.length) {
+  $("fees").innerHTML = FEES.map(f => `<div class="fee"><span>${f.label}</span><b>${f.amount}</b></div>`).join("");
+  $("feesec").hidden = false;
+}
+$("faq").innerHTML = FAQ.map(x => `<details><summary>${x.q}</summary><p>${x.a}</p></details>`).join("");
+try { new QRCode($("qr"), { text: SITE, width: 200, height: 200 }); } catch (e) { $("qr").textContent = SITE; }
+
+function evInfo(){
+  const c = CHAMBERS[$("ch").value], iso = $("dt").value;
+  return { iso, title: DOCTOR.name + " এর চেম্বার", loc: c.name + ", " + c.place,
+           det: "চেম্বারের সময়: " + c.time + "। সিরিয়াল নিশ্চিত করে নিন। " + SITE };
+}
+function nextDay(iso){
+  const d = new Date(iso + "T00:00:00"); d.setDate(d.getDate() + 1);
+  return d.getFullYear() + String(d.getMonth()+1).padStart(2,"0") + String(d.getDate()).padStart(2,"0");
+}
+$("gcal").addEventListener("click", () => {
+  const e = evInfo(); if (!e.iso) return;
+  window.open("https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent(e.title) +
+    "&dates=" + e.iso.replace(/-/g,"") + "/" + nextDay(e.iso) +
+    "&details=" + encodeURIComponent(e.det) + "&location=" + encodeURIComponent(e.loc), "_blank");
+});
+$("ics").addEventListener("click", () => {
+  const e = evInfo(); if (!e.iso) return;
+  const esc = t => t.replace(/[\\,;]/g, m => "\\" + m);
+  const stamp = new Date().toISOString().replace(/[-:]/g,"").replace(/\.\d+/,"");
+  const lines = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Chamber//BN//EN","BEGIN:VEVENT",
+    "UID:" + Date.now() + "@chamber","DTSTAMP:" + stamp,
+    "DTSTART;VALUE=DATE:" + e.iso.replace(/-/g,""), "DTEND;VALUE=DATE:" + nextDay(e.iso),
+    "SUMMARY:" + esc(e.title), "LOCATION:" + esc(e.loc), "DESCRIPTION:" + esc(e.det),
+    "BEGIN:VALARM","TRIGGER:-PT15H","ACTION:DISPLAY","DESCRIPTION:Chamber","END:VALARM",
+    "END:VEVENT","END:VCALENDAR"];
+  const blob = new Blob([lines.join("\r\n")], { type: "text/calendar;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = "chamber.ics";
+  document.body.appendChild(a); a.click(); a.remove();
+});
+
+$("bmibtn").addEventListener("click", () => {
+  const w = parseFloat($("bw").value), ft = parseFloat($("bf").value) || 0, inch = parseFloat($("bi").value) || 0;
+  const m = (ft * 12 + inch) * 0.0254, out = $("bmiout");
+  if (!(w >= 10 && w <= 300) || !(m >= 0.5 && m <= 2.5)) { out.textContent = "ওজন ও উচ্চতা সঠিকভাবে লিখুন।"; return; }
+  const b = w / (m * m);
+  const g = b < 18.5 ? "কম ওজন" : b < 23 ? "স্বাভাবিক" : b < 25 ? "ওজন বেশির ঝুঁকিতে" : b < 30 ? "স্থূলতা (প্রথম ধাপ)" : "স্থূলতা (দ্বিতীয় ধাপ)";
+  out.innerHTML = "আপনার BMI: <b>" + bn(b.toFixed(1)) + "</b> — " + g +
+    '<p class="note">এটি শুধু প্রাপ্তবয়স্কদের জন্য সাধারণ হিসাব (এশিয়ান মান অনুযায়ী)। শিশু ও গর্ভবতীদের জন্য প্রযোজ্য নয়। সঠিক পরামর্শের জন্য ডাক্তার দেখান।</p>';
+});
+
+const _t = new Date(), todayIdx = _t.getDay(), todayIso = _t.getFullYear() + "-" + String(_t.getMonth()+1).padStart(2,"0") + "-" + String(_t.getDate()).padStart(2,"0");
+const openToday = CHAMBERS.filter(c => c.days.includes(todayIdx) && !HOLIDAYS.includes(todayIso));
+$("today").innerHTML = openToday.length
+  ? "<b>আজ (" + DAYS[todayIdx] + "বার) বসছেন</b><br>" + openToday.map(c => c.name + ", " + c.time).join("<br>")
+  : "<b>আজ চেম্বার বন্ধ</b><br>নিচে পরবর্তী দিনগুলো দেখুন।";
+
+$("chambers").innerHTML = CHAMBERS.map(c => `
+  <div class="card">
+    <h3>${c.name}</h3>
+    <div class="days">${DAYS.map((d,i) => c.days.includes(i) ? `<span class="${i===todayIdx?'on':''}">${d}</span>` : "").join("")}</div>
+    <p class="meta">${c.time}</p>
+    <p class="meta">${c.place}${c.map ? ` • <a href="${c.map}" target="_blank" rel="noopener">ম্যাপ দেখুন</a>` : ""}</p>
+  </div>`).join("");
+
+$("ch").innerHTML = CHAMBERS.map((c,i) => `<option value="${i}">${c.name}</option>`).join("");
+
+function fillDates(){
+  const c = CHAMBERS[$("ch").value], out = [];
+  const d = new Date();
+  for (let i = 0; i < 90 && out.length < 6; i++){
+    const iso = d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+    if (c.days.includes(d.getDay()) && !HOLIDAYS.includes(iso))
+      out.push(`<option value="${iso}">${DAYS[d.getDay()]}বার, ${bn(d.getDate())}/${bn(d.getMonth()+1)}${i===0?" (আজ)":""}</option>`);
+    d.setDate(d.getDate() + 1);
+  }
+  $("dt").innerHTML = out.join("");
+}
+$("ch").addEventListener("change", fillDates);
+fillDates();
+
+function serialMsg(){
+  const c = CHAMBERS[$("ch").value];
+  let msg = `সিরিয়ালের জন্য অনুরোধ\n\nরোগীর নাম: ${$("name").value.trim()}\nবয়স: ${$("age").value}\nফোন: ${$("phone").value.trim()}\nচেম্বার: ${c.name}\nতারিখ: ${$("dt").selectedOptions[0].textContent}`;
+  if ($("prob").value.trim()) msg += `\nসমস্যা: ${$("prob").value.trim()}`;
+  return msg;
+}
+$("f").addEventListener("submit", e => {
+  e.preventDefault();
+  window.open("https://wa.me/" + DOCTOR.whatsapp + "?text=" + encodeURIComponent(serialMsg()), "_blank");
+});
+$("smsbtn").addEventListener("click", () => {
+  if (!$("f").reportValidity()) return;
+  window.location.href = "sms:+" + SMS_NUMBER + "?&body=" + encodeURIComponent(serialMsg());
+});
+
+if (SERIAL_PAUSE.trim()) {
+  $("pause").textContent = SERIAL_PAUSE.trim(); $("pause").hidden = false;
+  $("f").querySelector('button[type="submit"]').disabled = true; $("smsbtn").disabled = true;
+}
+if (NOTICES.length) {
+  $("board").innerHTML = NOTICES.map(n => `<div class="card">${n.date ? `<span class="bd">${n.date}</span><br>` : ""}${n.text}</div>`).join("");
+  $("boardsec").hidden = false;
+}
+if (FACEBOOK) { $("fbbtn").href = FACEBOOK; $("fbbtn").hidden = false; }
+if (MESSENGER) { $("msgbtn").href = MESSENGER; $("msgbtn").hidden = false; }
+if (DIRECTIONS.trim()) { $("dirs").textContent = DIRECTIONS.trim(); $("dirsec").hidden = false; }
+$("health").innerHTML = HEALTH.map(h => `<details><summary>${h.t}</summary><ul>${h.items.map(i => `<li>${i}</li>`).join("")}</ul></details>`).join("");
+
+$("onl").textContent = ONLINE_INFO;
+$("onlbtn").addEventListener("click", () => {
+  const t = "ভিডিও কলে অনলাইনে দেখাতে চাই।\n\nরোগীর নাম:\nবয়স:\nফোন:\nসমস্যা (সংক্ষেপে):";
+  window.open("https://wa.me/" + DOCTOR.whatsapp + "?text=" + encodeURIComponent(t), "_blank");
+});
+if (PAYMENT.length) {
+  $("pay").innerHTML = PAYMENT.map(p => `<div class="fee"><span>${p.name} (${p.type})</span><span><b>${p.number}</b> <button type="button" class="btn" data-num="${p.number}" style="flex:none;padding:4px 10px;font-size:.85rem">কপি</button></span></div>`).join("") +
+    `<p class="note">টাকা পাঠানোর পর ট্রানজেকশন আইডি ও রোগীর নাম হোয়াটসঅ্যাপে জানান। পিন বা ওটিপি কাউকে দেবেন না। ${PAY_NOTE}</p>`;
+  $("pay").addEventListener("click", e => {
+    const b = e.target.closest("button[data-num]"); if (!b) return;
+    if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.num).then(() => { b.textContent = "কপি হয়েছে"; }).catch(() => {});
+  });
+  $("paysec").hidden = false;
+}
+const SIZES = ["100%", "118%", "135%"]; let sz = 0;
+$("fontbtn").addEventListener("click", () => { sz = (sz + 1) % SIZES.length; document.documentElement.style.fontSize = SIZES[sz]; });
+</script>
+</body>
+</html>
